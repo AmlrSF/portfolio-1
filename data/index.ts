@@ -1,6 +1,6 @@
 export const navItems = [
   { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
+  { name: "Portfolio", link: "#projects" },
   { name: "Testimonials", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
@@ -8,7 +8,7 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
+    title: "I prioritize client vision, fostering creative collaboration",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -18,7 +18,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
+    title: "I'm very flexible with project timelines and revisions",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -28,8 +28,8 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "My tech stack",
-    description: "I constantly try to improve",
+    title: "My design toolkit",
+    description: "I constantly explore new creative techniques",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -38,7 +38,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Tech enthusiast with a passion for development.",
+    title: "Creative enthusiast with a passion for visual storytelling.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -46,11 +46,10 @@ export const gridItems = [
     img: "/grid.svg",
     spareImg: "/b4.svg",
   },
-
   {
     id: 5,
-    title: "Currently building a JS Animation library",
-    description: "The Inside Scoop",
+    title: "Currently working on a brand identity collection",
+    description: "The Creative Process",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -59,7 +58,7 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "Do you want to start a project together?",
+    title: "Do you want to bring your vision to life?",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -72,130 +71,130 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
+    title: "Brand Identity Collection",
+    des: "Complete brand identity designs featuring logos, color palettes, and brand guidelines for modern businesses.",
     img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    iconLists: ["/ps.svg", "/ai.svg", "/canva.svg", "/figma.svg", "/sketch.svg"],
+    link: "/ui.brands.com",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
+    title: "Social Media Graphics Pack",
+    des: "Eye-catching social media templates and graphics designed for maximum engagement across all platforms.",
     img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
+    iconLists: ["/canva.svg", "/ps.svg", "/ai.svg", "/after-effects.svg"],
+    link: "/ui.social.com",
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+    title: "Event Poster Series",
+    des: "Dynamic poster designs for concerts, festivals, and corporate events with bold typography and striking visuals.",
     img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
+    iconLists: ["/ai.svg", "/ps.svg", "/indesign.svg", "/canva.svg"],
+    link: "/ui.posters.com",
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+    title: "Digital Art Collection",
+    des: "Original digital artwork and illustrations combining traditional art techniques with modern digital tools.",
     img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
+    iconLists: ["/ps.svg", "/ai.svg", "/procreate.svg", "/figma.svg"],
+    link: "/ui.digitalart.com",
   },
 ];
 
 export const testimonials = [
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Working with Amir was incredible! His creative vision and attention to detail transformed our brand identity completely. The designs exceeded our expectations and perfectly captured our company's essence. Highly recommend for any design project!",
+    name: "Sarah Martinez",
+    title: "Marketing Director at CreativeHub",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Amir's poster designs for our music festival were absolutely stunning! The graphics were bold, vibrant, and captured the energy we wanted to convey. His professionalism and quick turnaround made the entire process smooth.",
+    name: "David Chen",
+    title: "Event Coordinator at SoundWave Festival",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "The social media graphics Amir created for our campaign generated amazing engagement! His understanding of visual trends and brand aesthetics is exceptional. Our followers loved the consistent, eye-catching designs.",
+    name: "Emma Thompson",
+    title: "Social Media Manager at TrendCorp",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Amir's digital art pieces are truly masterful. His ability to blend traditional artistic techniques with modern digital tools creates unique and captivating visuals. A talented artist with great communication skills.",
+    name: "Michael Rodriguez",
+    title: "Gallery Owner at Modern Arts Space",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "From concept to final design, Amir delivered outstanding work for our product packaging. His creative approach and technical skills in design software made our products stand out on the shelves. Excellent collaboration!",
+    name: "Lisa Wang",
+    title: "Product Manager at InnovateCo",
   },
 ];
 
 export const companies = [
   {
     id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
+    name: "adobe",
+    img: "/adobe.svg",
+    nameImg: "/adobeName.svg",
   },
   {
     id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
+    name: "canva",
+    img: "/canva.svg",
+    nameImg: "/canvaName.svg",
   },
   {
     id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
+    name: "behance",
+    img: "/behance.svg",
+    nameImg: "/behanceName.svg",
   },
   {
     id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
+    name: "dribbble",
+    img: "/dribbble.svg",
+    nameImg: "/dribbbleName.svg",
   },
   {
     id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    name: "figma",
+    img: "/figma.svg",
+    nameImg: "/figmaName.svg",
   },
 ];
 
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "Graphic Design Intern",
+    desc: "Created visual content for marketing campaigns, social media, and brand materials using Adobe Creative Suite.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "Freelance Designer - Creative Studio",
+    desc: "Designed brand identities, posters, and digital graphics for various clients across different industries.",
+    className: "md:col-span-2",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "Visual Content Creator",
+    desc: "Led the design of promotional materials, event graphics, and social media content for entertainment industry clients.",
+    className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Senior Graphic Designer",
+    desc: "Developed comprehensive brand guidelines and created impactful visual designs for digital and print media.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
@@ -204,14 +203,14 @@ export const workExperience = [
 export const socialMedia = [
   {
     id: 1,
-    img: "/git.svg",
-  },
-  {
-    id: 2,
     img: "/twit.svg",
   },
   {
+    id: 2,
+    img: "/wha.svg",
+  },
+  {
     id: 3,
-    img: "/link.svg",
+    img: "/insta.svg",
   },
 ];
