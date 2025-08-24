@@ -7,7 +7,7 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 const Hero = () => {
   return (
     <div className="pb-20 pt-36">
-   
+
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -17,9 +17,9 @@ const Hero = () => {
           className="h-[80vh] w-[50vw] top-10 left-full"
           fill="#FF6B6B"
         />
-        <Spotlight 
-          className="left-80 top-28 h-[80vh] w-[50vw]" 
-          fill="#4ECDC4" 
+        <Spotlight
+          className="left-80 top-28 h-[80vh] w-[50vw]"
+          fill="#4ECDC4"
         />
       </div>
 
@@ -53,7 +53,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Amir Mlouka, a Graphic Designer specializing in eye-catching designs, posters, social media graphics & more 🎨
+            Hi! I&apos;m Amir Mlouka, a creative graphic designer with a passion for turning ideas into visuals that grab attention. From bold posters to eye-catching social media content, I design with purpose, style, and impact
           </p>
 
           <a href="#about">

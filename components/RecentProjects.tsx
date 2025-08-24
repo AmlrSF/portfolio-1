@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Heart, Eye, Filter, Loader2, Clock } from 'lucide-react';
+import { TextGenerateEffect } from './ui/TextGenerateEffect';
 
 interface Project {
   _id: string;
@@ -71,13 +72,13 @@ const DynamicPortfolio = () => {
 
       const response = await fetch(`/api/projects?${params}`);
       const data: ApiResponse = await response.json();
-      
+
       if (currentPage === 1) {
         setProjects(data.projects);
       } else {
         setProjects(prev => [...prev, ...data.projects]);
       }
-      
+
       setTotalPages(data.pagination.pages);
     } catch (error) {
       console.error('Failed to fetch projects:', error);
@@ -90,28 +91,28 @@ const DynamicPortfolio = () => {
     try {
       await fetch(`/api/projects/${project._id}/view`, { method: 'POST' });
       // Update local state
-      setProjects(prev => 
+      setProjects(prev =>
         prev.map(p => p._id === project._id ? { ...p, views: p.views + 1 } : p)
       );
     } catch (error) {
       console.error('Failed to track view:', error);
     }
-    
+
     setSelectedImage(project);
   };
 
   const handleLike = async (project: Project, e: React.MouseEvent) => {
     e.stopPropagation();
-    
+
     const isLiked = likedProjects.has(project._id);
     const newLikedState = new Set(likedProjects);
-    
+
     if (isLiked) {
       newLikedState.delete(project._id);
     } else {
       newLikedState.add(project._id);
     }
-    
+
     setLikedProjects(newLikedState);
 
     try {
@@ -122,8 +123,8 @@ const DynamicPortfolio = () => {
       });
 
       // Update local state
-      setProjects(prev => 
-        prev.map(p => p._id === project._id 
+      setProjects(prev =>
+        prev.map(p => p._id === project._id
           ? { ...p, likes: isLiked ? p.likes - 1 : p.likes + 1 }
           : p
         )
@@ -160,17 +161,17 @@ const DynamicPortfolio = () => {
   // Format date
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return new Intl.DateTimeFormat('en-US', { 
-      year: 'numeric', 
-      month: 'short', 
-      day: 'numeric' 
+    return new Intl.DateTimeFormat('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
     }).format(date);
   };
 
   // Skeleton component for loading state
   const SkeletonCard = ({ index }: { index: number }) => {
     const delay = index * 0.1;
-    
+
     return (
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -205,11 +206,16 @@ const DynamicPortfolio = () => {
           className="text-center mb-12"
         >
           <h1 className="text-5xl font-bold text-white mb-4">
-            My Creative <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Portfolio</span>
+            My Creative
+
+            <TextGenerateEffect
+              words="Portfolio"
+              className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text"
+            />
           </h1>
-          
+
           <p className="text-white/70 mb-8 max-w-2xl mx-auto text-lg">
-            Explore my collection of creative projects including brand identities, 
+            Explore my collection of creative projects including brand identities,
             posters, social media graphics, and digital illustrations.
           </p>
 
@@ -221,11 +227,10 @@ const DynamicPortfolio = () => {
                 onClick={() => handleFilterChange(category.key)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full border backdrop-blur-sm transition-all duration-300 ${
-                  filter === category.key
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-transparent shadow-lg shadow-purple-500/25'
-                    : 'bg-white/10 text-white/70 border-white/20 hover:border-purple-400 hover:text-white hover:bg-white/20'
-                }`}
+                className={`px-6 py-3 rounded-full border backdrop-blur-sm transition-all duration-300 ${filter === category.key
+                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-transparent shadow-lg shadow-purple-500/25'
+                  : 'bg-white/10 text-white/70 border-white/20 hover:border-purple-400 hover:text-white hover:bg-white/20'
+                  }`}
               >
                 <Filter className="w-4 h-4 inline mr-2" />
                 {category.label}
@@ -244,7 +249,7 @@ const DynamicPortfolio = () => {
         )}
 
         {/* Portfolio Grid */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
           layout
         >
@@ -266,8 +271,8 @@ const DynamicPortfolio = () => {
                   {/* Project Image */}
                   <div className="aspect-square relative overflow-hidden">
                     {project.image ? (
-                      <img 
-                        src={project.image} 
+                      <img
+                        src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         onError={(e) => {
@@ -276,9 +281,9 @@ const DynamicPortfolio = () => {
                         }}
                       />
                     ) : null}
-                    
+
                     {/* Fallback gradient */}
-                    <div 
+                    <div
                       className={`absolute inset-0 bg-gradient-to-br ${getCategoryGradient(project.category, index)} flex items-center justify-center ${project.image ? 'hidden' : ''}`}
                     >
                       <div className="text-center p-6">
@@ -302,22 +307,21 @@ const DynamicPortfolio = () => {
                             onClick={(e) => handleLike(project, e)}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            className={`flex items-center transition-colors ${
-                              likedProjects.has(project._id) ? 'text-red-400' : 'text-white/80 hover:text-red-400'
-                            }`}
+                            className={`flex items-center transition-colors ${likedProjects.has(project._id) ? 'text-red-400' : 'text-white/80 hover:text-red-400'
+                              }`}
                           >
-                            <Heart 
-                              className={`w-5 h-5 mr-1 ${likedProjects.has(project._id) ? 'fill-current' : ''}`} 
+                            <Heart
+                              className={`w-5 h-5 mr-1 ${likedProjects.has(project._id) ? 'fill-current' : ''}`}
                             />
                             <span className="font-medium">{project.likes}</span>
                           </motion.button>
-                          
+
                           <div className="flex items-center text-white/80">
                             <Eye className="w-5 h-5 mr-1" />
                             <span className="font-medium">{project.views}</span>
                           </div>
                         </div>
-                        
+
                         <motion.div
                           initial={{ scale: 0, y: 20 }}
                           animate={{ scale: hoveredIndex === index ? 1 : 0, y: hoveredIndex === index ? 0 : 20 }}
@@ -332,7 +336,7 @@ const DynamicPortfolio = () => {
                     {/* Featured Badge */}
                     {project.featured && (
                       <div className="absolute top-4 left-4">
-                        <motion.span 
+                        <motion.span
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
                           className="px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-black text-xs font-bold rounded-full shadow-lg"
@@ -358,14 +362,14 @@ const DynamicPortfolio = () => {
                     <p className="text-white/60 text-sm line-clamp-2 mb-2">
                       {project.description}
                     </p>
-                    
+
                     <div className="flex justify-between items-center">
                       {project.clientName && (
                         <p className="text-purple-400 text-xs font-medium">
                           Client: {project.clientName}
                         </p>
                       )}
-                      
+
                       {/* Added completion date */}
                       {project.completedAt && (
                         <p className="text-white/40 text-xs flex items-center">
@@ -374,12 +378,12 @@ const DynamicPortfolio = () => {
                         </p>
                       )}
                     </div>
-                    
+
                     {/* Tags */}
                     {project.tags && project.tags.length > 0 && (
                       <div className="flex flex-wrap gap-1 mt-2">
                         {project.tags.slice(0, 3).map((tag, tagIndex) => (
-                          <span 
+                          <span
                             key={tagIndex}
                             className="px-2 py-1 bg-white/10 text-white/70 text-xs rounded-full hover:bg-purple-500/20 transition-colors"
                           >
@@ -393,7 +397,7 @@ const DynamicPortfolio = () => {
                         )}
                       </div>
                     )}
-                    
+
                     {/* Stats bar at bottom */}
                     <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/10">
                       <div className="flex items-center text-white/50 text-xs">
@@ -415,7 +419,7 @@ const DynamicPortfolio = () => {
         {/* Load More Button */}
         {currentPage < totalPages && (
           <div className="text-center mt-12">
-            <motion.button 
+            <motion.button
               onClick={loadMoreProjects}
               disabled={loading}
               whileHover={{ scale: 1.05 }}
@@ -467,13 +471,13 @@ const DynamicPortfolio = () => {
               >
                 <X className="w-6 h-6 text-white" />
               </button>
-              
+
               <div className="grid md:grid-cols-2 gap-0">
                 {/* Image */}
                 <div className="aspect-square bg-gradient-to-br from-purple-900/30 to-pink-900/30 flex items-center justify-center overflow-hidden">
                   {selectedImage.image ? (
-                    <img 
-                      src={selectedImage.image} 
+                    <img
+                      src={selectedImage.image}
                       alt={selectedImage.title}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
@@ -485,7 +489,7 @@ const DynamicPortfolio = () => {
                     </div>
                   )}
                 </div>
-                
+
                 {/* Details */}
                 <div className="p-8 flex flex-col justify-center">
                   <div className="mb-4">
@@ -498,10 +502,10 @@ const DynamicPortfolio = () => {
                       </span>
                     )}
                   </div>
-                  
+
                   <h2 className="text-4xl font-bold text-white mb-4">{selectedImage.title}</h2>
                   <p className="text-white/80 text-lg mb-6 leading-relaxed">{selectedImage.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     {selectedImage.clientName && (
                       <div className="bg-white/5 rounded-lg p-3">
@@ -509,7 +513,7 @@ const DynamicPortfolio = () => {
                         <p className="text-purple-400 font-medium">{selectedImage.clientName}</p>
                       </div>
                     )}
-                    
+
                     {selectedImage.completedAt && (
                       <div className="bg-white/5 rounded-lg p-3">
                         <p className="text-white/50 text-sm">Completed On</p>
@@ -534,7 +538,7 @@ const DynamicPortfolio = () => {
                   {selectedImage.tags && selectedImage.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 mb-6">
                       {selectedImage.tags.map((tag, index) => (
-                        <span 
+                        <span
                           key={index}
                           className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-sm hover:bg-purple-500/20 transition-colors"
                         >
@@ -550,16 +554,15 @@ const DynamicPortfolio = () => {
                       onClick={(e) => handleLike(selectedImage, e)}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className={`flex items-center px-6 py-3 rounded-full font-medium transition-all ${
-                        likedProjects.has(selectedImage._id)
-                          ? 'bg-red-500 text-white'
-                          : 'bg-white/10 text-white hover:bg-white/20'
-                      }`}
+                      className={`flex items-center px-6 py-3 rounded-full font-medium transition-all ${likedProjects.has(selectedImage._id)
+                        ? 'bg-red-500 text-white'
+                        : 'bg-white/10 text-white hover:bg-white/20'
+                        }`}
                     >
                       <Heart className={`w-5 h-5 mr-2 ${likedProjects.has(selectedImage._id) ? 'fill-current' : ''}`} />
                       {likedProjects.has(selectedImage._id) ? 'Liked' : 'Like'}
                     </motion.button>
-                    
+
                     {selectedImage.projectUrl && (
                       <motion.a
                         href={selectedImage.projectUrl}

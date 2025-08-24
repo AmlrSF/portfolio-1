@@ -11,9 +11,9 @@ export const gridItems = [
     title: "I prioritize client vision, fostering creative collaboration",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
-    imgClassName: "w-full h-full",
+    imgClassName: "w-full h-full object-cover transition-all duration-700",
     titleClassName: "justify-end",
-    img: "/b1.svg",
+    img: "/b1.svg", // Use a high-quality image of a stylish design workspace
     spareImg: "",
   },
   {
@@ -23,7 +23,7 @@ export const gridItems = [
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-start",
-    img: "",
+    img: "/timeline-visual.svg", // Consider adding a subtle visual for this card
     spareImg: "",
   },
   {
@@ -33,7 +33,7 @@ export const gridItems = [
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
-    img: "",
+    img: "/design-tools-bg.svg", // Subtle background showing design tools
     spareImg: "",
   },
   {
@@ -41,7 +41,7 @@ export const gridItems = [
     title: "Creative enthusiast with a passion for visual storytelling.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
+    imgClassName: "h-full",
     titleClassName: "justify-start",
     img: "/grid.svg",
     spareImg: "/b4.svg",
@@ -51,9 +51,9 @@ export const gridItems = [
     title: "Currently working on a brand identity collection",
     description: "The Creative Process",
     className: "md:col-span-3 md:row-span-2",
-    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-    titleClassName: "justify-center md:justify-start lg:justify-center",
-    img: "/b5.svg",
+    imgClassName: "h-full object-cover transition-opacity duration-1000",
+    titleClassName: "justify-center md:justify-start lg:justify-start",
+    img: "/work.jpg", // This will be rotated with other portfolio images
     spareImg: "/grid.svg",
   },
   {
@@ -106,37 +106,54 @@ export const projects = [
 export const testimonials = [
   {
     quote:
-      "Working with Amir was incredible! His creative vision and attention to detail transformed our brand identity completely. The designs exceeded our expectations and perfectly captured our company's essence. Highly recommend for any design project!",
-    name: "Sarah Martinez",
-    title: "Marketing Director at CreativeHub",
+      "Machallah taswira ro3eb deja 5dema heyla te5dem feha wallah bravo, tsawer lkol tayara!",
+    translation:
+      "Mashallah, the picture is amazing! Already great work, really impressive. All the photos are outstanding!",
+    name: "Oussama Jellali",
+    title: "Coach",
+    image: "oussama.jpg",
+    instagram: "https://www.instagram.com/oussama.jellali", 
   },
   {
     quote:
-      "Amir's poster designs for our music festival were absolutely stunning! The graphics were bold, vibrant, and captured the energy we wanted to convey. His professionalism and quick turnaround made the entire process smooth.",
-    name: "David Chen",
-    title: "Event Coordinator at SoundWave Festival",
+      "You are a great artist, thank you for the photo brother ❤️🙏",
+    name: "Hamza Hamry",
+    title: "PRO MMA Fighter & Athlete",
+    image: "hamza.png",
+    instagram: "https://www.instagram.com/hamza.hamry", 
   },
   {
     quote:
-      "The social media graphics Amir created for our campaign generated amazing engagement! His understanding of visual trends and brand aesthetics is exceptional. Our followers loved the consistent, eye-catching designs.",
-    name: "Emma Thompson",
-    title: "Social Media Manager at TrendCorp",
+      "Amazing، تحسها متع فيلم حلوة ياسر. يعطيك الصحة 🔥",
+    translation:
+      "Amazing, it feels like a movie scene, really beautiful. God bless you 🔥",
+    name: "Redstar Radi",
+    title: "Rapper",
+    image: "redstar.jpg",
+    instagram: "https://www.instagram.com/redstarradi", 
   },
   {
     quote:
-      "Amir's digital art pieces are truly masterful. His ability to blend traditional artistic techniques with modern digital tools creates unique and captivating visuals. A talented artist with great communication skills.",
-    name: "Michael Rodriguez",
-    title: "Gallery Owner at Modern Arts Space",
+      "Merci khouya wallah fara7tni w ena menich fi sa7ni jemla nharin hadhom, merci li raka3tli el mood ❤️",
+    translation:
+      "Thank you brother, honestly you made me so happy, I wasn’t feeling myself these last few days, thanks for lifting my mood ❤️",
+    name: "Mohamed Amine Fakhfakh",
+    title: "Pro Bodybuilder",
+    image: "amine.jpg",
+    instagram: "https://www.instagram.com/mohamed_amine_fakhfakh", 
   },
   {
     quote:
-      "From concept to final design, Amir delivered outstanding work for our product packaging. His creative approach and technical skills in design software made our products stand out on the shelves. Excellent collaboration!",
-    name: "Lisa Wang",
-    title: "Product Manager at InnovateCo",
+      "Nice work broooo ❤️💪",
+    name: "Omar Jlassi",
+    title: "Coach",
+    image: "omar.jpg",
+    instagram: "https://www.instagram.com/omar_jlassiii", 
   },
 ];
 
-export const companies = [
+
+ export const companies = [
   {
     id: 1,
     name: "adobe",
